@@ -1,13 +1,20 @@
 package DoomsdayClock.doomsdayclock;
 
+import DoomsdayClock.doomsdayclock.ClockUI;
+import DoomsdayClock.doomsdayclock.ClockMechanism;
+import java.io.*;
+
 /**
- * Hello world!
+ * 
  *
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
-        System.out.println( "Hello World!" );
+    	ClockMechanism cmech = new ClockMechanism();
+    	cmech.loadData();
+        ClockUI clockUI = new ClockUI(cmech);
+        clockUI.runUI();
     }
 }
